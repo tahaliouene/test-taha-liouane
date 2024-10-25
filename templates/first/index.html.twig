@@ -1,0 +1,58 @@
+
+
+
+
+
+
+
+
+<div class="example-wrapper">
+    <h1>Hello {{ classe }}! ✅</h1>
+    {# This is a comment #}
+
+    {% set pi = 3.14 %}
+    {{ pi }}
+
+    <br>
+
+    {% set T = [1, 2, 3] %}
+    {{ T[2]}}
+
+    {% if 'Emna' starts with 'S' %}
+        <h1>Found </h1>
+        {% elseif 'Emna' ends with 'a' %}
+        <h2> found a </h2>
+        {% else %}
+            <h1>Not found </h1>
+    {% endif %}
+
+    {% for x in T %}
+        {{ 'X = ' ~ x }}
+    {% endfor %}
+
+  
+
+    {% for i in range(0,9) %}
+        {{ i }}
+    {% endfor %}
+
+    {% for key, value in T %}
+{{ key }} - {{ value }} <br>
+{% endfor %}
+
+{{ 'Mohamed' | lower }}
+{{ 'Mohamed' | upper }}
+{{ 'mohamed' | capitalize }}
+
+{{"  Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sunt voluptates quod excepturi reiciendis perferendis quia in error voluptatibus reprehenderit beatae, molestias eligendi illum porro ducimus distinctio facilis! Culpa, est?     "  | trim | upper}}
+
+{{ 'now' | date()}}
+{{ 'now' | date("Y-m-d") }}
+{{ 'now' | date("Y-m-d H:i:s") }}
+
+{{ 'now' | date_modify("+1 day") | date("d/M/Y") }}
+
+
+
+</div>
+

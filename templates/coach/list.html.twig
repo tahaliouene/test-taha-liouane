@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Liste des Coachs</h1>
+    <ul>
+        {% for coach in coaches %}
+            <li>
+                <strong>ID :</strong> {{ coach.id }}<br>
+                <strong>CIN :</strong> {{ coach.cin }}<br>
+                <strong>Date d'inscription :</strong> {{ coach.datedinscription ? coach.datedinscription|date('d/m/Y') : 'Non définie' }}<br>
+                <strong>Spécialité :</strong> {{ coach.specialite }}<br>
+                <form method="post" action="{{ path('delete_coach', {id: coach.id}) }}">
+                    <button type="submit">Supprimer</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
